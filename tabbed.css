@@ -1,0 +1,68 @@
+.tabbed {
+	--color-blue-500: hsl(211, 100%, 50%);
+	--tabColor: hsl(0, 0%, 20%);
+	--tabBackgroundColor: hsl(240, 13%, 91%);
+	--tabSelectedColor: hsl(0, 0%, 100%);
+	--tabSelectedBackgroundColor: hsl(0, 0%, 20%);
+	
+	--tabFocusBoxShadow: 0 0 0 1.5px hsl(0, 0%, 100%), 0 0 0 4.5px hsl(211, 100%, 50%);
+	--tabpanelFocusBoxShadow: 0 0 0 3px hsl(211, 100%, 50%);
+}
+
+.tabbed__tablist {
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+}
+
+@media (min-width: 550px) {
+	.tabbed__tablist {
+		display: flex;
+		gap: 0.4em;
+	}
+}
+
+.tabbed__tab {
+	display: block;
+
+	padding: 0.5rem 1em;
+
+	color: var(--tabColor);
+	font-weight: 700;
+	font-size: 17px;
+	text-decoration: none;	
+
+	background-color: var(--tabBackgroundColor);
+}
+
+@media (min-width: 550px) {
+	.tabbed__tab {
+		border-radius: 3px;
+	}
+}
+
+.tabbed__tab[aria-selected] {
+	position: relative;
+	z-index: 1;
+
+	color: var(--tabSelectedColor);
+
+	border-bottom: 0;
+
+	background-color: var(--tabSelectedBackgroundColor);
+}
+
+.tabbed__tab:focus-visible {
+	box-shadow: var(--tabFocusBoxShadow);
+}
+
+.tabbed__tabpanel {
+	padding: 1rem;
+}
+
+.tabbed__tabpanel:focus-visible {
+	outline: none;
+
+	box-shadow: var(--tabpanelFocusBoxShadow);
+}
