@@ -58,7 +58,7 @@
 }
 
 .tabbed__tabpanel {
-	padding: 1rem;
+	padding: 0.8em 0;
 }
 
 .tabbed__tabpanel:focus-visible {
